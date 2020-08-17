@@ -53,7 +53,7 @@ simulate_benford <- function(howoften) {
   times <- seq(from = 0, to = 1000, by = 1)
   #how often is the simulation to be run
   howoften=howoften
-  # start or parallel frame work
+  # start our parallel frame work
   raus <- foreach(zerun=1:howoften,.combine=rbind,.packages=c('circular', 'BenfordTests','kuiper.2samp','deSolve','benford.analysis')) %dopar% { 
  
     # choose a random beta/gamma/mu with the mean around the expected beta of Covid19 and a not too extreme sd to get valid disease curves
